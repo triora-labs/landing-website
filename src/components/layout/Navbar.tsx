@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname, useRouter } from 'next/navigation'
 import { useState, useEffect } from 'react'
 import { NAV_ITEMS } from '@/constants/nav'
@@ -47,8 +48,8 @@ export default function Navbar() {
         <nav>
           {/* Logo */}
           <Link href="/" className="logo" prefetch>
-            <div className="logo-ring">TL</div>
-            <span className="logo-text">TRIORA<br />LABS</span>
+            <Image src="/images/light.png" alt="Triora Labs Logo" width={220} height={60} className="logo-light-mode" style={{ objectFit: 'contain' }} priority />
+            <Image src="/images/dark.png" alt="Triora Labs Logo" width={220} height={60} className="logo-dark-mode" style={{ objectFit: 'contain' }} priority />
           </Link>
 
           {/* Nav links */}

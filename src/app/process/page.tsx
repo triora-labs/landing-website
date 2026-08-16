@@ -11,24 +11,33 @@ export const metadata: Metadata = {
 export default function ProcessPage() {
   return (
     <>
-      <section className="page-header">
+      <section style={{ padding: '120px 0 60px' }}>
         <div className="wrap">
-          <span className="eyebrow">{t.process.eyebrow}</span>
-          <h1>{t.process.pageHeading}</h1>
-          <p className="lead">{t.process.pageLead}</p>
-        </div>
-      </section>
+          <div className="process-header-centered">
+            <span className="eyebrow" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 14px', border: '1px solid var(--line)', borderRadius: '99px', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '16px', background: 'var(--surface)', fontWeight: 600 }}>
+              <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--accent)' }}></span>
+              {t.process.eyebrow}
+            </span>
+            <h1>{t.process.pageHeading}</h1>
+            <p className="lead">{t.process.pageLead}</p>
+          </div>
 
-      <section className="tight">
-        <div className="wrap">
-          <div className="process-strip">{t.process.strip}</div>
-          <div className="process-grid">
+          <div className="process-strip-modern">
+            {t.process.strip}
+          </div>
+
+          <div className="process-timeline-v2">
             {PROCESS_STEPS.map((s) => (
-              <div className="process-card" key={s.number} data-num={s.number}>
-                <div className="pc-num">{s.number}</div>
-                <h3>{s.title}</h3>
-                <p>{s.description}</p>
-                <span className="pc-deliverable">↳ {s.deliverable}</span>
+              <div className="process-step-v2" key={s.number}>
+                <div className="step-node">{s.number}</div>
+                <div className="process-card-v2">
+                  <h3>{s.title}</h3>
+                  <p>{s.description}</p>
+                  <div className="step-deliverable-pill">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    {s.deliverable}
+                  </div>
+                </div>
               </div>
             ))}
           </div>

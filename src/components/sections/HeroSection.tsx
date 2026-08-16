@@ -8,11 +8,20 @@ export default function HeroSection() {
       <div className="wrap">
         <div className="hero-card">
           <Image
-            src="https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?w=1400&q=80"
-            alt="Triora Labs hero background"
+            src="/images/apple.png"
+            alt="Triora Labs hero background light"
+            fill
+            style={{ objectFit: 'cover', opacity: 1 }}
+            priority
+            className="hero-img-light"
+          />
+          <Image
+            src="/images/hero.png"
+            alt="Triora Labs hero background dark"
             fill
             style={{ objectFit: 'cover', opacity: 0.35 }}
             priority
+            className="hero-img-dark"
           />
           <div className="hero-overlay" />
           <div className="hero-glow" />

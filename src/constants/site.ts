@@ -5,11 +5,11 @@ export const SITE_CONFIG = {
   shortTagline: 'Boutique Software Engineering Studio',
   description:
     'Triora Labs designs, builds, and deploys modern websites, web applications, and production cloud infrastructure. From idea to production.',
-  email: 'hello@trioralabs.com',
+  email: 'trioralabs@gmail.com',
   socials: {
-    linkedin: '#',
+    linkedin: 'https://www.linkedin.com/company/triora-labs/?viewAsMember=true',
     github: '#',
-    instagram: '#',
+    instagram: 'https://www.instagram.com/triora_labs?igsh=MWVoMGxxZmEwMGw5cA==',
   },
   copyright: `© ${new Date().getFullYear()} Triora Labs. All rights reserved.`,
 }

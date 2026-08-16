@@ -3,6 +3,7 @@ import { Outfit, Inter } from 'next/font/google'
 import '@/styles/globals.css'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
+import FloatingActions from '@/components/layout/FloatingActions'
 import PageTransition from '@/components/layout/PageTransition'
 import { ThemeProvider } from '@/context/ThemeContext'
 import { SITE_CONFIG } from '@/constants/site'
@@ -24,7 +25,7 @@ const themeScript = `
   try {
     var saved = localStorage.getItem('triora-theme');
     var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    var theme = saved || (prefersDark ? 'dark' : 'light');
+    var theme = saved || 'light';
     document.documentElement.setAttribute('data-theme', theme);
   } catch(e) {}
 })();
@@ -32,7 +33,7 @@ const themeScript = `
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${outfit.variable} ${inter.variable}`} data-theme="dark" suppressHydrationWarning>
+    <html lang="en" className={`${outfit.variable} ${inter.variable}`} data-theme="light" suppressHydrationWarning>
       <head>
         {/* Prevents flash of wrong theme on page load */}
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
@@ -44,6 +45,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <main>{children}</main>
           </PageTransition>
           <Footer />
+          <FloatingActions />
         </ThemeProvider>
       </body>
     </html>
